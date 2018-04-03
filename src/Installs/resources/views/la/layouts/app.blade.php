@@ -4,7 +4,7 @@
 @section('htmlheader')
 	@include('la.layouts.partials.htmlheader')
 @show
-<body class="{{ LAConfigs::getByKey('skin') }} {{ LAConfigs::getByKey('layout') }} @if(LAConfigs::getByKey('layout') == 'sidebar-mini') sidebar-collapse @endif" bsurl="{{ url('') }}" adminRoute="{{ config('laraadmin.adminRoute') }}">
+<body class="{{ LAConfigs::getByKey('skin') }} {{ LAConfigs::getByKey('layout') }} @if(LAConfigs::getByKey('layout') == 'sidebar-mini') sidebar-collapse @endif" bsurl="{{ url('') }}" adminRoute="{{ config('Crm.adminRoute') }}">
 <div class="wrapper">
 
 	@include('la.layouts.partials.mainheader')

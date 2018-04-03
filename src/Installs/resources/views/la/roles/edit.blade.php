@@ -1,11 +1,11 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title")
-	<a href="{{ url(config('laraadmin.adminRoute') . '/roles') }}">Roles</a> :
+	<a href="{{ url(config('Crm.adminRoute') . '/roles') }}">Roles</a> :
 @endsection
 @section("contentheader_description", $role->$view_col)
 @section("section", "Roles")
-@section("section_url", url(config('laraadmin.adminRoute') . '/roles'))
+@section("section_url", url(config('Crm.adminRoute') . '/roles'))
 @section("sub_section", "Edit")
 
 @section("htmlheader_title", "Role Edit : ".$role->$view_col)
@@ -29,7 +29,7 @@
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				{!! Form::model($role, ['route' => [config('laraadmin.adminRoute') . '.roles.update', $role->id ], 'method'=>'PUT', 'id' => 'role-edit-form']) !!}
+				{!! Form::model($role, ['route' => [config('Crm.adminRoute') . '.roles.update', $role->id ], 'method'=>'PUT', 'id' => 'role-edit-form']) !!}
 					@la_input($module, 'name', null, null, "form-control text-uppercase", ["placeholder" => "Role Name in CAPITAL LETTERS with '_' to JOIN e.g. 'SUPER_ADMIN'"])
 					@la_input($module, 'display_name')
 					@la_input($module, 'description')
@@ -37,7 +37,7 @@
 					@la_input($module, 'dept')
 					<br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('laraadmin.adminRoute') . '/roles') }}" class="btn btn-default pull-right">Cancel</a>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('Crm.adminRoute') . '/roles') }}" class="btn btn-default pull-right">Cancel</a>
 					</div>
 				{!! Form::close() !!}
 			</div>

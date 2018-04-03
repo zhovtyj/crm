@@ -1,7 +1,7 @@
 @extends("la.layouts.app")
 
 <?php
-use Dwij\Laraadmin\Models\Module;
+use Zhovtyj\Crm\Models\Module;
 ?>
 
 @section("contentheader_title", "Modules")
@@ -35,13 +35,13 @@ use Dwij\Laraadmin\Models\Module;
 			@foreach ($modules as $module)
 				<tr>
 					<td>{{ $module->id }}</td>
-					<td><a href="{{ url(config('laraadmin.adminRoute') . '/modules/'.$module->id) }}">{{ $module->label }}</a></td>
+					<td><a href="{{ url(config('Crm.adminRoute') . '/modules/'.$module->id) }}">{{ $module->label }}</a></td>
 					<td>{{ $module->name_db }}</td>
 					<td>{{ Module::itemCount($module->name) }}</td>
 					<td>
 						<a module_label="{{ $module->label }}" module_icon="{{ $module->fa_icon }}" module_id="{{ $module->id }}" class="btn btn-primary btn-xs update_module" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-edit"></i></a>
-						<a href="{{ url(config('laraadmin.adminRoute') . '/modules/'.$module->id)}}#access" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-key"></i></a>
-						<a href="{{ url(config('laraadmin.adminRoute') . '/modules/'.$module->id)}}#sort" class="btn btn-success btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-sort"></i></a>
+						<a href="{{ url(config('Crm.adminRoute') . '/modules/'.$module->id)}}#access" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-key"></i></a>
+						<a href="{{ url(config('Crm.adminRoute') . '/modules/'.$module->id)}}#sort" class="btn btn-success btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-sort"></i></a>
 						<a module_name="{{ $module->name }}" module_id="{{ $module->id }}" class="btn btn-danger btn-xs delete_module" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-trash"></i></a>
 					</td>
 				</tr>
@@ -58,7 +58,7 @@ use Dwij\Laraadmin\Models\Module;
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Add Module Of Exist Table</h4>
 			</div>
-			{!! Form::open(['route' => config('laraadmin.adminRoute') . '.modules.store', 'id' => 'module-add-form']) !!}
+			{!! Form::open(['route' => config('Crm.adminRoute') . '.modules.store', 'id' => 'module-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
 					<!--<div class="form-group">
@@ -104,7 +104,7 @@ use Dwij\Laraadmin\Models\Module;
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Add Module</h4>
 			</div>
-			{!! Form::open(['route' => config('laraadmin.adminRoute') . '.modules.store', 'id' => 'module-add-form']) !!}
+			{!! Form::open(['route' => config('Crm.adminRoute') . '.modules.store', 'id' => 'module-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
 					<div class="form-group">
@@ -146,7 +146,7 @@ use Dwij\Laraadmin\Models\Module;
 				<p class="text-danger">Note: Migration file will not be deleted but modified.</p>
 			</div>
 			<div class="modal-footer">
-				{{ Form::open(['route' => [config('laraadmin.adminRoute') . '.modules.destroy', 0], 'id' => 'module_del_form', 'method' => 'delete', 'style'=>'display:inline']) }}
+				{{ Form::open(['route' => [config('Crm.adminRoute') . '.modules.destroy', 0], 'id' => 'module_del_form', 'method' => 'delete', 'style'=>'display:inline']) }}
 					<button class="btn btn-danger btn-delete pull-left" type="submit">Yes</button>
 				{{ Form::close() }}
 				<a data-dismiss="modal" class="btn btn-default pull-right" >No</a>				
@@ -210,7 +210,7 @@ $(function () {
 		$("#module_del_form").attr("action", $url.replace("/0", "/"+module_id));
 		$("#module_delete_confirm").modal('show');
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/get_module_files/') }}/" + module_id,
+			url: "{{ url(config('Crm.adminRoute') . '/get_module_files/') }}/" + module_id,
 			type:"POST",
 			beforeSend: function() {
 				$("#moduleDeleteFiles").html('<center><i class="fa fa-refresh fa-spin"></i></center>');
@@ -243,7 +243,7 @@ $(function () {
 			var module_label = $(".module_label_edit").val();
 			var module_icon = $(".module_icon_edit").val();
 			$.ajax({
-				url: "{{ url(config('laraadmin.adminRoute') . '/module_update') }}",
+				url: "{{ url(config('Crm.adminRoute') . '/module_update') }}",
 				type:"POST",
 				data : {'id':module_id,'label':module_label, 'icon':module_icon, '_token': '{{ csrf_token() }}' },
 				success: function(data) {

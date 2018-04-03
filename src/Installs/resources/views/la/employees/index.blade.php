@@ -110,7 +110,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/employee_dt_ajax') }}",
+        ajax: "{{ url(config('Crm.adminRoute') . '/employee_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",

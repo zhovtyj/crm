@@ -1,10 +1,10 @@
 <?php
 /**
- * Config generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Config generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 return [

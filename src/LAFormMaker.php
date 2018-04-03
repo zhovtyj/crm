@@ -1,22 +1,22 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin;
+namespace Zhovtyj\Crm;
 
 use Schema;
 use Collective\Html\FormFacade as Form;
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFieldTypes;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFieldTypes;
 
 /**
  * Class LAFormMaker
- * @package Dwij\Laraadmin
+ * @package Zhovtyj\Crm
  *
  * This class is blade directive implementation for Form Elements in Module as well as other utilities
  * for Access Control. It also has method process_values which processes fields data from its context.
@@ -81,7 +81,7 @@ class LAFormMaker
             if($unique && !isset($params['unique'])) {
                 $params['data-rule-unique'] = "true";
                 $params['field_id'] = $module->fields[$field_name]['id'];
-                $params['adminRoute'] = config('laraadmin.adminRoute');
+                $params['adminRoute'] = config('Crm.adminRoute');
                 if(isset($row)) {
                     $params['isEdit'] = true;
                     $params['row_id'] = $row->id;
@@ -801,7 +801,7 @@ class LAFormMaker
                         if($value != 0) {
                             $moduleVal = Module::getByTable(str_replace("@", "", $fieldObj['popup_vals']));
                             if(isset($moduleVal->id)) {
-                                $value = "<a href='" . url(config("laraadmin.adminRoute") . "/" . $moduleVal->name_db . "/" . $value) . "' class='label label-primary'>" . $values[$value] . "</a> ";
+                                $value = "<a href='" . url(config("Crm.adminRoute") . "/" . $moduleVal->name_db . "/" . $value) . "' class='label label-primary'>" . $values[$value] . "</a> ";
                             } else {
                                 $value = "<a class='label label-primary'>" . $values[$value] . "</a> ";
                             }
@@ -885,7 +885,7 @@ class LAFormMaker
                                 if(in_array($key, $valueSel)) {
                                     $module_link = "";
                                     if(isset($moduleVal->id)) {
-                                        $module_link = "href='" . url(config("laraadmin.adminRoute") . "/" . $moduleVal->name_db . "/" . $key) . "'";
+                                        $module_link = "href='" . url(config("Crm.adminRoute") . "/" . $moduleVal->name_db . "/" . $key) . "'";
                                     }
                                     $valueOut .= "<a $module_link class='label label-primary'>" . $val . "</a> ";
                                 }
@@ -922,7 +922,7 @@ class LAFormMaker
                             $valueSel = json_decode($value);
                             foreach($values as $key => $val) {
                                 if(in_array($key, $valueSel)) {
-                                    $valueOut .= "<a href='" . url(config("laraadmin.adminRoute") . "/" . $moduleVal->name_db . "/" . $key) . "' class='label label-primary'>" . $val . "</a> ";
+                                    $valueOut .= "<a href='" . url(config("Crm.adminRoute") . "/" . $moduleVal->name_db . "/" . $key) . "' class='label label-primary'>" . $val . "</a> ";
                                 }
                             }
                         } else {

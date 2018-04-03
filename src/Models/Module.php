@@ -1,13 +1,13 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Models;
+namespace Zhovtyj\Crm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
@@ -15,13 +15,13 @@ use Illuminate\Database\Schema\Blueprint;
 use Exception;
 use Log;
 use DB;
-use Dwij\Laraadmin\Helpers\LAHelper;
+use Zhovtyj\Crm\Helpers\LAHelper;
 
 /**
  * Class Module
- * @package Dwij\Laraadmin\Models
+ * @package Zhovtyj\Crm\Models
  *
- * Most important Model of LaraAdmin which looks after Module, ModuleField Generation.
+ * Most important Model of Crm which looks after Module, ModuleField Generation.
  * It also handles Module migrations via "generate" method to create Module Schema in Database.
  *
  */
@@ -988,7 +988,7 @@ class Module extends Model
     
     /**
      * Create Validations rules array for Laravel Validations using Module Field Context / Metadata
-     * Used in LaraAdmin generated Controllers for store and update.
+     * Used in Crm generated Controllers for store and update.
      * This generates array of validation rules for whole Module
      *
      *

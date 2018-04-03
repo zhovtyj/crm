@@ -1,26 +1,26 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin;
+namespace Zhovtyj\Crm;
 
 use Artisan;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
-use Dwij\Laraadmin\Helpers\LAHelper;
+use Zhovtyj\Crm\Helpers\LAHelper;
 
 /**
  * Class LAProvider
- * @package Dwij\Laraadmin
+ * @package Zhovtyj\Crm
  *
- * This is LaraAdmin Service Provider which looks after managing aliases, other required providers, blade directives
+ * This is Crm Service Provider which looks after managing aliases, other required providers, blade directives
  * and Commands.
  */
 class LAProvider extends ServiceProvider
@@ -32,26 +32,26 @@ class LAProvider extends ServiceProvider
      */
     public function boot()
     {
-        // @mkdir(base_path('resources/laraadmin'));
-        // @mkdir(base_path('database/migrations/laraadmin'));
+        // @mkdir(base_path('resources/Crm'));
+        // @mkdir(base_path('database/migrations/Crm'));
         /*
         $this->publishes([
-            __DIR__.'/Templates' => base_path('resources/laraadmin'),
-            __DIR__.'/config.php' => base_path('config/laraadmin.php'),
-            __DIR__.'/Migrations' => base_path('database/migrations/laraadmin')
+            __DIR__.'/Templates' => base_path('resources/Crm'),
+            __DIR__.'/config.php' => base_path('config/Crm.php'),
+            __DIR__.'/Migrations' => base_path('database/migrations/Crm')
         ]);
         */
-        //echo "Laraadmin Migrations started...";
-        // Artisan::call('migrate', ['--path' => "vendor/dwij/laraadmin/src/Migrations/"]);
+        //echo "Crm Migrations started...";
+        // Artisan::call('migrate', ['--path' => "vendor/Zhovtyj/Crm/src/Migrations/"]);
         //echo "Migrations completed !!!.";
-        // Execute by php artisan vendor:publish --provider="Dwij\Laraadmin\LAProvider"
+        // Execute by php artisan vendor:publish --provider="Zhovtyj\Crm\LAProvider"
         
         /*
         |--------------------------------------------------------------------------
         | Blade Directives for Entrust not working in Laravel 5.3
         |--------------------------------------------------------------------------
         */
-        if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+        if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
             
             // Call to Entrust::hasRole
             Blade::directive('role', function ($expression) {
@@ -117,20 +117,20 @@ class LAProvider extends ServiceProvider
         // For Gravatar User Profile Pics
         $loader->alias('Gravatar', \Creativeorange\Gravatar\Facades\Gravatar::class);
         
-        // For LaraAdmin Code Generation
-        $loader->alias('CodeGenerator', \Dwij\Laraadmin\CodeGenerator::class);
+        // For Crm Code Generation
+        $loader->alias('CodeGenerator', \Zhovtyj\Crm\CodeGenerator::class);
         
-        // For LaraAdmin Form Helper
-        $loader->alias('LAFormMaker', \Dwij\Laraadmin\LAFormMaker::class);
+        // For Crm Form Helper
+        $loader->alias('LAFormMaker', \Zhovtyj\Crm\LAFormMaker::class);
         
-        // For LaraAdmin Helper
-        $loader->alias('LAHelper', \Dwij\Laraadmin\Helpers\LAHelper::class);
+        // For Crm Helper
+        $loader->alias('LAHelper', \Zhovtyj\Crm\Helpers\LAHelper::class);
         
-        // LaraAdmin Module Model 
-        $loader->alias('Module', \Dwij\Laraadmin\Models\Module::class);
+        // Crm Module Model 
+        $loader->alias('Module', \Zhovtyj\Crm\Models\Module::class);
         
-        // For LaraAdmin Configuration Model
-        $loader->alias('LAConfigs', \Dwij\Laraadmin\Models\LAConfigs::class);
+        // For Crm Configuration Model
+        $loader->alias('LAConfigs', \Zhovtyj\Crm\Models\LAConfigs::class);
         
         // For Entrust
         $loader->alias('Entrust', \Zizaco\Entrust\EntrustFacade::class);
@@ -144,13 +144,13 @@ class LAProvider extends ServiceProvider
         |--------------------------------------------------------------------------
         */
         
-        $this->app->make('Dwij\Laraadmin\Controllers\ModuleController');
-        $this->app->make('Dwij\Laraadmin\Controllers\FieldController');
-        $this->app->make('Dwij\Laraadmin\Controllers\MenuController');
+        $this->app->make('Zhovtyj\Crm\Controllers\ModuleController');
+        $this->app->make('Zhovtyj\Crm\Controllers\FieldController');
+        $this->app->make('Zhovtyj\Crm\Controllers\MenuController');
         
         // For LAEditor
         if(file_exists(__DIR__ . '/../../laeditor')) {
-            $this->app->make('Dwij\Laeditor\Controllers\CodeEditorController');
+            $this->app->make('Zhovtyj\Laeditor\Controllers\CodeEditorController');
         }
         
         /*
@@ -161,7 +161,7 @@ class LAProvider extends ServiceProvider
         
         // LAForm Input Maker
         Blade::directive('la_input', function ($expression) {
-            if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+            if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
                 $expression = "(" . $expression . ")";
             }
             return "<?php echo LAFormMaker::input$expression; ?>";
@@ -169,7 +169,7 @@ class LAProvider extends ServiceProvider
         
         // LAForm Form Maker
         Blade::directive('la_form', function ($expression) {
-            if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+            if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
                 $expression = "(" . $expression . ")";
             }
             return "<?php echo LAFormMaker::form$expression; ?>";
@@ -177,7 +177,7 @@ class LAProvider extends ServiceProvider
         
         // LAForm Maker - Display Values
         Blade::directive('la_display', function ($expression) {
-            if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+            if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
                 $expression = "(" . $expression . ")";
             }
             return "<?php echo LAFormMaker::display$expression; ?>";
@@ -185,7 +185,7 @@ class LAProvider extends ServiceProvider
         
         // LAForm Maker - Check Whether User has Module Access
         Blade::directive('la_access', function ($expression) {
-            if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+            if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
                 $expression = "(" . $expression . ")";
             }
             return "<?php if(LAFormMaker::la_access$expression) { ?>";
@@ -196,7 +196,7 @@ class LAProvider extends ServiceProvider
         
         // LAForm Maker - Check Whether User has Module Field Access
         Blade::directive('la_field_access', function ($expression) {
-            if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+            if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
                 $expression = "(" . $expression . ")";
             }
             return "<?php if(LAFormMaker::la_field_access$expression) { ?>";
@@ -212,15 +212,15 @@ class LAProvider extends ServiceProvider
         */
         
         $commands = [
-            \Dwij\Laraadmin\Commands\Migration::class,
-            \Dwij\Laraadmin\Commands\Crud::class,
-            \Dwij\Laraadmin\Commands\Packaging::class,
-            \Dwij\Laraadmin\Commands\LAInstall::class
+            \Zhovtyj\Crm\Commands\Migration::class,
+            \Zhovtyj\Crm\Commands\Crud::class,
+            \Zhovtyj\Crm\Commands\Packaging::class,
+            \Zhovtyj\Crm\Commands\LAInstall::class
         ];
         
         // For LAEditor
         if(file_exists(__DIR__ . '/../../laeditor')) {
-            $commands[] = \Dwij\Laeditor\Commands\LAEditor::class;
+            $commands[] = \Zhovtyj\Laeditor\Commands\LAEditor::class;
         }
         
         $this->commands($commands);

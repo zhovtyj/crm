@@ -58,7 +58,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/backup_dt_ajax') }}",
+        ajax: "{{ url(config('Crm.adminRoute') . '/backup_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",
@@ -71,7 +71,7 @@ $(function () {
 	
 	$("#CreateBackup").on("click", function() {
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/create_backup_ajax') }}",
+			url: "{{ url(config('Crm.adminRoute') . '/create_backup_ajax') }}",
 			method: 'POST',
 			beforeSend: function() {
 				$("#CreateBackup").html('<i class="fa fa-refresh fa-spin"></i> Creating Backup...');
@@ -89,7 +89,7 @@ $(function () {
 						position: "top-right",
 						timeout: 0,
 						type: "success",
-						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('la-assets/img/laraadmin_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
+						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('la-assets/img/Crm_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
 					}).show();
 					setTimeout(function() {
 						window.location.reload();
@@ -103,7 +103,7 @@ $(function () {
 						position: "top-right",
 						timeout: 0,
 						type: "danger",
-						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('la-assets/img/laraadmin_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
+						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('la-assets/img/Crm_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
 					}).show();
 					console.error(data.output);
 				}

@@ -86,7 +86,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/role_dt_ajax') }}",
+        ajax: "{{ url(config('Crm.adminRoute') . '/role_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",

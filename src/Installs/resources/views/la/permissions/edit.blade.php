@@ -1,11 +1,11 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title")
-	<a href="{{ url(config('laraadmin.adminRoute') . '/permissions') }}">Permission</a> :
+	<a href="{{ url(config('Crm.adminRoute') . '/permissions') }}">Permission</a> :
 @endsection
 @section("contentheader_description", $permission->$view_col)
 @section("section", "Permissions")
-@section("section_url", url(config('laraadmin.adminRoute') . '/permissions'))
+@section("section_url", url(config('Crm.adminRoute') . '/permissions'))
 @section("sub_section", "Edit")
 
 @section("htmlheader_title", "Permissions Edit : ".$permission->$view_col)
@@ -29,7 +29,7 @@
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				{!! Form::model($permission, ['route' => [config('laraadmin.adminRoute') . '.permissions.update', $permission->id ], 'method'=>'PUT', 'id' => 'permission-edit-form']) !!}
+				{!! Form::model($permission, ['route' => [config('Crm.adminRoute') . '.permissions.update', $permission->id ], 'method'=>'PUT', 'id' => 'permission-edit-form']) !!}
 					@la_form($module)
 					
 					{{--
@@ -39,7 +39,7 @@
 					--}}
                     <br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('laraadmin.adminRoute') . '/permissions') }}" class="btn btn-default pull-right">Cancel</a>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('Crm.adminRoute') . '/permissions') }}" class="btn btn-default pull-right">Cancel</a>
 					</div>
 				{!! Form::close() !!}
 			</div>

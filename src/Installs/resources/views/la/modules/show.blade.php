@@ -3,8 +3,8 @@
 @section('htmlheader_title', 'Module View')
 
 <?php
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFields;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFields;
 ?>
 
 @section('main-content')
@@ -21,7 +21,7 @@ use Dwij\Laraadmin\Models\ModuleFields;
 					<div class="profile-icon text-primary"><i class="fa {{$module->fa_icon}}"></i></div>
 				</div>
 				<div class="col-md-9">
-					<a class="text-white" href="{{ url(config('laraadmin.adminRoute') . '/'.$module->name_db) }}"><h4 data-toggle="tooltip" data-placement="left" title="Open {{ $module->model }} Module" class="name">{{ $module->label }}</h4></a>
+					<a class="text-white" href="{{ url(config('Crm.adminRoute') . '/'.$module->name_db) }}"><h4 data-toggle="tooltip" data-placement="left" title="Open {{ $module->model }} Module" class="name">{{ $module->label }}</h4></a>
 					<div class="row stats">
 						<div class="col-md-12">{{ Module::itemCount($module->name) }} Items</div>
 					</div>
@@ -62,7 +62,7 @@ use Dwij\Laraadmin\Models\ModuleFields;
 	</div>
 
 	<ul id="module-tabs" data-toggle="ajax-tab" class="nav nav-tabs profile" role="tablist">
-		<li class=""><a href="{{ url(config('laraadmin.adminRoute') . '/modules') }}" data-toggle="tooltip" data-placement="right" title="Back to Modules"> <i class="fa fa-chevron-left"></i>&nbsp;</a></li>
+		<li class=""><a href="{{ url(config('Crm.adminRoute') . '/modules') }}" data-toggle="tooltip" data-placement="right" title="Back to Modules"> <i class="fa fa-chevron-left"></i>&nbsp;</a></li>
 		
 		<li class="tab-pane" id="fields">
 			<a id="tab_fields" role="tab" data-toggle="tab" class="tab_info" href="#fields" data-target="#tab-info"><i class="fa fa-bars"></i> Module Fields</a>
@@ -119,7 +119,7 @@ use Dwij\Laraadmin\Models\ModuleFields;
 									<td>{{ $field['maxlength'] }}</td>
 									<td>@if($field['required']) <span class="text-danger">True</span>@endif </td>
 									<td>
-										<form id="listing_view_cal" action="{{ url(config('laraadmin.adminRoute') . '/module_field_listing_show') }}">
+										<form id="listing_view_cal" action="{{ url(config('Crm.adminRoute') . '/module_field_listing_show') }}">
 											<input name="ref_{!! $field['id'] !!}" type="checkbox" @if($field['listing_col'] == 1) checked="checked" @endif>
 											<div class="Switch Ajax Round @if($field['listing_col'] == 1) On @else Off @endif" listid="{{ $field['id'] }}">
 												<div class="Toggle"></div>
@@ -128,10 +128,10 @@ use Dwij\Laraadmin\Models\ModuleFields;
 									</td>
 									<td style="max-width:300px;"><?php echo LAHelper::parseValues($field['popup_vals']) ?></td>
 									<td style="min-width:60px;">
-										<a href="{{ url(config('laraadmin.adminRoute') . '/module_fields/'.$field['id'].'/edit') }}" class="btn btn-edit-field btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;" id="edit_{{ $field['colname'] }}"><i class="fa fa-edit"></i></a>
-										<a href="{{ url(config('laraadmin.adminRoute') . '/module_fields/'.$field['id'].'/delete') }}" class="btn btn-edit-field btn-danger btn-xs" style="display:inline;padding:2px 5px 3px 5px;" id="delete_{{ $field['colname'] }}"><i class="fa fa-trash"></i></a>
+										<a href="{{ url(config('Crm.adminRoute') . '/module_fields/'.$field['id'].'/edit') }}" class="btn btn-edit-field btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;" id="edit_{{ $field['colname'] }}"><i class="fa fa-edit"></i></a>
+										<a href="{{ url(config('Crm.adminRoute') . '/module_fields/'.$field['id'].'/delete') }}" class="btn btn-edit-field btn-danger btn-xs" style="display:inline;padding:2px 5px 3px 5px;" id="delete_{{ $field['colname'] }}"><i class="fa fa-trash"></i></a>
 										@if($field['colname'] != $module->view_col)
-											<a href="{{ url(config('laraadmin.adminRoute') . '/modules/'.$module->id.'/set_view_col/'.$field['colname']) }}" class="btn btn-edit-field btn-success btn-xs" style="display:inline;padding:2px 5px 3px 5px;" id="view_col_{{ $field['colname'] }}"><i class="fa fa-eye"></i></a>
+											<a href="{{ url(config('Crm.adminRoute') . '/modules/'.$module->id.'/set_view_col/'.$field['colname']) }}" class="btn btn-edit-field btn-success btn-xs" style="display:inline;padding:2px 5px 3px 5px;" id="view_col_{{ $field['colname'] }}"><i class="fa fa-eye"></i></a>
 										@endif
 									</td>
 								</tr>
@@ -147,7 +147,7 @@ use Dwij\Laraadmin\Models\ModuleFields;
 				<span class="pull-left">Module Access for Roles</span>
 				<i class="fa fa-circle gray"></i> Invisible <i class="fa fa-circle orange"></i> Read-Only <i class="fa fa-circle green"></i> Write
 			</div>
-			<form action="{{ url(config('laraadmin.adminRoute') . '/save_role_module_permissions/'.$module->id) }}" method="post">
+			<form action="{{ url(config('Crm.adminRoute') . '/save_role_module_permissions/'.$module->id) }}" method="post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<table class="table table-bordered dataTable no-footer table-access">
 					<thead>
@@ -238,7 +238,7 @@ use Dwij\Laraadmin\Models\ModuleFields;
 				<p class="text-danger">Note: Migration file will not be deleted but modified.</p>
 			</div>
 			<div class="modal-footer">
-				{{ Form::open(['route' => [config('laraadmin.adminRoute') . '.modules.destroy', 0], 'id' => 'module_del_form', 'method' => 'delete', 'style'=>'display:inline']) }}
+				{{ Form::open(['route' => [config('Crm.adminRoute') . '.modules.destroy', 0], 'id' => 'module_del_form', 'method' => 'delete', 'style'=>'display:inline']) }}
 					<button class="btn btn-danger btn-delete pull-left" type="submit">Yes</button>
 				{{ Form::close() }}
 				<a data-dismiss="modal" class="btn btn-default pull-right" >No</a>				
@@ -256,7 +256,7 @@ use Dwij\Laraadmin\Models\ModuleFields;
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Add {{ $module->model }} Field</h4>
 			</div>
-			{!! Form::open(['route' => config('laraadmin.adminRoute') . '.module_fields.store', 'id' => 'field-form']) !!}
+			{!! Form::open(['route' => config('Crm.adminRoute') . '.module_fields.store', 'id' => 'field-form']) !!}
 			{{ Form::hidden("module_id", $module->id) }}
 			<div class="modal-body">
 				<div class="box-body">
@@ -427,7 +427,7 @@ $(function () {
 		$("#module_del_form").attr("action", $url.replace("/0", "/"+module_id));
 		$("#module_delete_confirm").modal('show');
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/get_module_files/') }}/" + module_id,
+			url: "{{ url(config('Crm.adminRoute') . '/get_module_files/') }}/" + module_id,
 			type:"POST",
 			beforeSend: function() {
 				$("#moduleDeleteFiles").html('<center><i class="fa fa-refresh fa-spin"></i></center>');
@@ -506,7 +506,7 @@ $(function () {
 			});
 			
 			$.ajax({
-				url: "{{ url(config('laraadmin.adminRoute') . '/save_module_field_sort') }}/"+{{ $module->id }},
+				url: "{{ url(config('Crm.adminRoute') . '/save_module_field_sort') }}/"+{{ $module->id }},
 				data : {'sort_array': array},
 				method: 'GET',
 				success: function( data ) {
@@ -523,7 +523,7 @@ $(function () {
 		$fa.addClass("fa-refresh");
 		$fa.addClass("fa-spin");
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/module_generate_migr') }}/"+{{ $module->id }},
+			url: "{{ url(config('Crm.adminRoute') . '/module_generate_migr') }}/"+{{ $module->id }},
 			method: 'GET',
 			success: function( data ) {
 				$fa.removeClass("fa-refresh");
@@ -540,7 +540,7 @@ $(function () {
 		$fa.addClass("fa-refresh");
 		$fa.addClass("fa-spin");
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/module_generate_migr') }}/"+{{ $module->id }},
+			url: "{{ url(config('Crm.adminRoute') . '/module_generate_migr') }}/"+{{ $module->id }},
 			method: 'GET',
 			success: function( data ) {
 				$fa.removeClass("fa-refresh");
@@ -557,7 +557,7 @@ $(function () {
 		$fa.addClass("fa-refresh");
 		$fa.addClass("fa-spin");
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/module_generate_update') }}/"+{{ $module->id }},
+			url: "{{ url(config('Crm.adminRoute') . '/module_generate_update') }}/"+{{ $module->id }},
 			method: 'GET',
 			success: function( data ) {
 				$fa.removeClass("fa-refresh");
@@ -575,7 +575,7 @@ $(function () {
 		$fa.addClass("fa-refresh");
 		$fa.addClass("fa-spin");
 		$.ajax({
-			url: "{{ url(config('laraadmin.adminRoute') . '/module_generate_migr_crud') }}/"+{{ $module->id }},
+			url: "{{ url(config('Crm.adminRoute') . '/module_generate_migr_crud') }}/"+{{ $module->id }},
 			method: 'GET',
 			success: function( data ) {
 				$fa.removeClass("fa-refresh");
@@ -731,7 +731,7 @@ $(function () {
 		}
 		$.ajax({
 			type: "POST",
-			url : "{{ url(config('laraadmin.adminRoute') . '/module_field_listing_show') }}",
+			url : "{{ url(config('Crm.adminRoute') . '/module_field_listing_show') }}",
 			data : {
 				_token: '{{ csrf_token() }}',
 				listid: $(this).attr("listid"),

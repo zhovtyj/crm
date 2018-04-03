@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="http://laraadmin.com/img/laraadmin-256.png">
-  <h1 align="center" style="margin-top:5px;">LaraAdmin 1.0</h1>
+  <img src="http://Crm.com/img/Crm-256.png">
+  <h1 align="center" style="margin-top:5px;">Crm 1.0</h1>
 </p>
 
-[![Total Downloads](https://poser.pugx.org/dwij/laraadmin/d/total.svg)](https://packagist.org/packages/dwij/laraadmin)
-[![Build Status](https://travis-ci.org/laraadmin/laraadmin-dev.svg?branch=master)](https://travis-ci.org/laraadmin/laraadmin-dev)
-[![Latest Stable Version](https://poser.pugx.org/dwij/laraadmin/v/stable.svg)](https://packagist.org/packages/dwij/laraadmin)
-[![Latest Unstable Version](https://poser.pugx.org/dwij/laraadmin/v/unstable.svg)](https://packagist.org/packages/dwij/laraadmin)
-[![License](https://poser.pugx.org/dwij/laraadmin/license.svg)](https://packagist.org/packages/dwij/laraadmin)
-[![Code Triagers Badge](https://www.codetriage.com/dwijitsolutions/laraadmin/badges/users.svg)](https://www.codetriage.com/dwijitsolutions/laraadmin)
+[![Total Downloads](https://poser.pugx.org/Zhovtyj/Crm/d/total.svg)](https://packagist.org/packages/Zhovtyj/Crm)
+[![Build Status](https://travis-ci.org/Crm/Crm-dev.svg?branch=master)](https://travis-ci.org/Crm/Crm-dev)
+[![Latest Stable Version](https://poser.pugx.org/Zhovtyj/Crm/v/stable.svg)](https://packagist.org/packages/Zhovtyj/Crm)
+[![Latest Unstable Version](https://poser.pugx.org/Zhovtyj/Crm/v/unstable.svg)](https://packagist.org/packages/Zhovtyj/Crm)
+[![License](https://poser.pugx.org/Zhovtyj/Crm/license.svg)](https://packagist.org/packages/Zhovtyj/Crm)
+[![Code Triagers Badge](https://www.codetriage.com/Zhovtyjitsolutions/Crm/badges/users.svg)](https://www.codetriage.com/Zhovtyjitsolutions/Crm)
 
-LaraAdmin is a Open source CRM for quick-start Admin based applications with features like Advanced CRUD Generation, Schema Manager and Workflows.
-##### Website: [laraadmin.com](http://laraadmin.com)
-##### Creator: [@gdbhosale](https://github.com/gdbhosale), [Dwij IT Solutions](https://github.com/dwijitsolutions)
+Crm is a Open source CRM for quick-start Admin based applications with features like Advanced CRUD Generation, Schema Manager and Workflows.
+##### Website: [Crm.com](http://Crm.com)
+##### Creator: [@gdbhosale](https://github.com/gdbhosale), [Zhovtyj IT Solutions](https://github.com/Zhovtyjitsolutions)
 
 --------
 
@@ -32,34 +32,34 @@ Easy user Management with features like Employees, Roles, Groups, Departments an
 
 CRUD Model Listing & Add:
 
-![LaraAdmin CRUD Model Add](http://laraadmin.com/img/laraadmin/laraadmin-row-listing-add.jpg)
+![Crm CRUD Model Add](http://Crm.com/img/Crm/Crm-row-listing-add.jpg)
 
 CRUD Model View:
 
-![LaraAdmin CRUD Model View](http://laraadmin.com/img/laraadmin/laraadmin-row-view.jpg)
+![Crm CRUD Model View](http://Crm.com/img/Crm/Crm-row-view.jpg)
 
 Online Code Editor:
-![Online Code Editor](http://laraadmin.com/img/laraadmin/laraadmin-online-code-editor.jpg)
+![Online Code Editor](http://Crm.com/img/Crm/Crm-online-code-editor.jpg)
 
 ### Installation & Documentation
 
-Documentation for the LaraAdmin can be found on the [LaraAdmin website](http://laraadmin.com/documentation).
+Documentation for the Crm can be found on the [Crm website](http://Crm.com/documentation).
 
 ### Contributing
 
-Thank you for considering contributing to the LaraAdmin. Please read [features doc](http://laraadmin.com/devdoc-features)
+Thank you for considering contributing to the Crm. Please read [features doc](http://Crm.com/devdoc-features)
 
 ### Bugs, improvements & Security Vulnerabilities
 
-If you discover a bug or security vulnerability within LaraAdmin, please send an e-mail to Ganesh Bhosale at ganesh@dwij.in. All requests will beaddressed promptly.
+If you discover a bug or security vulnerability within Crm, please send an e-mail to Ganesh Bhosale at ganesh@Zhovtyj.in. All requests will beaddressed promptly.
 
 ### Issues
 
-If you come across any issue/bug please [report them here](https://github.com/dwijitsolutions/laraadmin/issues).
+If you come across any issue/bug please [report them here](https://github.com/Zhovtyjitsolutions/Crm/issues).
 
 ### License
 
-LaraAdmin is open-sourced software built by Dwij IT Solutions and contributors and licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Crm is open-sourced software built by Zhovtyj IT Solutions and contributors and licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 ### Credits:
 - Ganesh Bhosale https://github.com/gdbhosale
@@ -72,7 +72,7 @@ LaraAdmin is open-sourced software built by Dwij IT Solutions and contributors a
 <p align="center">
   <br>
   Brought to you by<br>
-  <a href="http://dwijitsolutions.com">
-  <img src="http://dwijitsolutions.com/wp-content/uploads/2016/01/dwij-it-solutions.png">
+  <a href="http://Zhovtyjitsolutions.com">
+  <img src="http://Zhovtyjitsolutions.com/wp-content/uploads/2016/01/Zhovtyj-it-solutions.png">
   </a>
 </p>

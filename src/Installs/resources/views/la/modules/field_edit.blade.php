@@ -3,7 +3,7 @@
 @section("contentheader_title", "Edit Field: ".$field->label)
 @section("contentheader_description", "from ".$module->model." module")
 @section("section", "Module ".$module->name)
-@section("section_url", url(config('laraadmin.adminRoute') . '/modules/'.$module->id))
+@section("section_url", url(config('Crm.adminRoute') . '/modules/'.$module->id))
 @section("sub_section", "Edit Field")
 
 @section("htmlheader_title", "Field Edit : ".$field->label)
@@ -16,7 +16,7 @@
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				{!! Form::model($field, ['route' => [config('laraadmin.adminRoute') . '.module_fields.update', $field->id ], 'method'=>'PUT', 'id' => 'field-edit-form']) !!}
+				{!! Form::model($field, ['route' => [config('Crm.adminRoute') . '.module_fields.update', $field->id ], 'method'=>'PUT', 'id' => 'field-edit-form']) !!}
 					{{ Form::hidden("module_id", $module->id) }}
 					
 					<div class="form-group">
@@ -106,7 +106,7 @@
 					
                     <br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('laraadmin.adminRoute') . '/modules/'.$module->id) }}" class="btn btn-default pull-right">Cancel</a>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('Crm.adminRoute') . '/modules/'.$module->id) }}" class="btn btn-default pull-right">Cancel</a>
 					</div>
 				{!! Form::close() !!}
 				

@@ -1,21 +1,21 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Commands;
+namespace Zhovtyj\Crm\Commands;
 
 use Illuminate\Console\Command;
 
-use Dwij\Laraadmin\CodeGenerator;
+use Zhovtyj\Crm\CodeGenerator;
 
 /**
  * Class Migration
- * @package Dwij\Laraadmin\Commands
+ * @package Zhovtyj\Crm\Commands
  *
  * Command to generation new sample migration file or complete migration file from DB Context
  * if '--generate' parameter is used after command, it generate migration from database.
@@ -26,7 +26,7 @@ class Migration extends Command
     protected $signature = 'la:migration {table} {--generate}';
     
     // The command description.
-    protected $description = 'Generate Migrations for LaraAdmin';
+    protected $description = 'Generate Migrations for Crm';
     
     /**
      * Generate a Migration file either sample or from DB Context

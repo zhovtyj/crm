@@ -1,24 +1,24 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Commands;
+namespace Zhovtyj\Crm\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Dwij\Laraadmin\Helpers\LAHelper;
+use Zhovtyj\Crm\Helpers\LAHelper;
 
 /**
  * Class Packaging
- * @package Dwij\Laraadmin\Commands
+ * @package Zhovtyj\Crm\Commands
  *
- * Command to put latest development and changes of project into LaraAdmin package.
- * [For LaraAdmin Developer's Only]
+ * Command to put latest development and changes of project into Crm package.
+ * [For Crm Developer's Only]
  */
 class Packaging extends Command
 {
@@ -29,7 +29,7 @@ class Packaging extends Command
     protected $signature = 'la:packaging';
     
     // Copy From Folder - Package Install Files
-    protected $description = '[Developer Only] - Copy LaraAdmin-Dev files to package: "dwij/laraadmin"';
+    protected $description = '[Developer Only] - Copy Crm-Dev files to package: "Zhovtyj/Crm"';
     
     // Copy to Folder - Project Folder
     protected $from;
@@ -38,7 +38,7 @@ class Packaging extends Command
     protected $to;
     
     /**
-     * Copy Project changes into LaraAdmin package.
+     * Copy Project changes into Crm package.
      *
      * @return mixed
      */
@@ -47,7 +47,7 @@ class Packaging extends Command
         $this->info('Exporting started...');
         
         $from = base_path();
-        $to = base_path('vendor/dwij/laraadmin/src/Installs');
+        $to = base_path('vendor/Zhovtyj/Crm/src/Installs');
         
         $this->info('from: ' . $from . " to: " . $to);
         
@@ -71,7 +71,7 @@ class Packaging extends Command
         
         // Routes
         $this->line('Exporting Routes...');
-        if(LAHelper::laravel_ver() == 5.3 || LAHelper::laravel_ver() == 5.4) {
+        if(LAHelper::laravel_ver() >= 5.3 || LAHelper::laravel_ver() == 5.4) {
             // $this->copyFile($from."/routes/web.php", $to."/app/routes.php"); // Not needed anymore
             $this->copyFile($from . "/routes/admin_routes.php", $to . "/app/admin_routes.php");
         } else {
@@ -85,10 +85,10 @@ class Packaging extends Command
         
         // Config
         $this->line('Exporting Config...');
-        $this->copyFile($from . "/config/laraadmin.php", $to . "/config/laraadmin.php");
+        $this->copyFile($from . "/config/Crm.php", $to . "/config/Crm.php");
         
         // la-assets
-        $this->line('Exporting LaraAdmin Assets...');
+        $this->line('Exporting Crm Assets...');
         $this->replaceFolder($from . "/public/la-assets", $to . "/la-assets");
         // Use "git config core.fileMode false" for ignoring file permissions
         

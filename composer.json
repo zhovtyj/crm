@@ -1,12 +1,12 @@
  {
     "name": "zhovtyj/crm",
-    "description": "LaraAdmin is a Open source Laravel Admin Panel / CMS which can be used as Admin Backend, Data Management Tool or CRM boilerplate for Laravel with features like CRUD Generation, Module Manager, Media, Menus, Backups and much more",
+    "description": "Crm is a Open source Laravel Admin Panel / CMS which can be used as Admin Backend, Data Management Tool or CRM boilerplate for Laravel with features like CRUD Generation, Module Manager, Media, Menus, Backups and much more",
     "keywords": ["php", "laravel", "crm", "admin", "cms", "administrator"],
     "license": "MIT",
-    "homepage": "http://laraadmin.com",
+    "homepage": "http://Crm.com",
     "support": {
-        "issues": "https://github.com/dwijitsolutions/laraadmin/issues",
-        "source": "https://github.com/dwijitsolutions/laraadmin"
+        "issues": "https://github.com/Zhovtyjitsolutions/Crm/issues",
+        "source": "https://github.com/Zhovtyjitsolutions/Crm"
     },
     "version": "1.2",
     "require": {
@@ -31,7 +31,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Dwij\\Laraadmin\\": "src/"
+            "Zhovtyj\\Crm\\": "src/"
         },
         "files": [
         ]

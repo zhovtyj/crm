@@ -125,26 +125,26 @@
 							@role("SUPER_ADMIN")
 							<li class="user-body">
 								<div class="col-xs-6 text-center mb10">
-									<a href="{{ url(config('laraadmin.adminRoute') . '/lacodeeditor') }}"><i class="fa fa-code"></i> <span>Editor</span></a>
+									<a href="{{ url(config('Crm.adminRoute') . '/lacodeeditor') }}"><i class="fa fa-code"></i> <span>Editor</span></a>
 								</div>
 								<div class="col-xs-6 text-center mb10">
-									<a href="{{ url(config('laraadmin.adminRoute') . '/modules') }}"><i class="fa fa-cubes"></i> <span>Modules</span></a>
+									<a href="{{ url(config('Crm.adminRoute') . '/modules') }}"><i class="fa fa-cubes"></i> <span>Modules</span></a>
 								</div>
 								<div class="col-xs-6 text-center mb10">
-									<a href="{{ url(config('laraadmin.adminRoute') . '/la_menus') }}"><i class="fa fa-bars"></i> <span>Menus</span></a>
+									<a href="{{ url(config('Crm.adminRoute') . '/la_menus') }}"><i class="fa fa-bars"></i> <span>Menus</span></a>
 								</div>
 								<div class="col-xs-6 text-center mb10">
-									<a href="{{ url(config('laraadmin.adminRoute') . '/la_configs') }}"><i class="fa fa-cogs"></i> <span>Configure</span></a>
+									<a href="{{ url(config('Crm.adminRoute') . '/la_configs') }}"><i class="fa fa-cogs"></i> <span>Configure</span></a>
 								</div>
 								<div class="col-xs-6 text-center">
-									<a href="{{ url(config('laraadmin.adminRoute') . '/backups') }}"><i class="fa fa-hdd-o"></i> <span>Backups</span></a>
+									<a href="{{ url(config('Crm.adminRoute') . '/backups') }}"><i class="fa fa-hdd-o"></i> <span>Backups</span></a>
 								</div>
 							</li>
 							@endrole
 							<!-- Menu Footer-->
 							<li class="user-footer">
 								<div class="pull-left">
-									<a href="{{ url(config('laraadmin.adminRoute') . '/users/') .'/'. Auth::user()->id }}" class="btn btn-default btn-flat">Profile</a>
+									<a href="{{ url(config('Crm.adminRoute') . '/users/') .'/'. Auth::user()->id }}" class="btn btn-default btn-flat">Profile</a>
 								</div>
 								<div class="pull-right">
 									<a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Sign out</a>

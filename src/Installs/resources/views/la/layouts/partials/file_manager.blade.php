@@ -13,13 +13,13 @@
 				<div class="row">
 					<div class="col-xs-3 col-sm-3 col-md-3">
 						<div class="fm_folder_selector">
-							<form action="{{ url(config('laraadmin.adminRoute') . '/upload_files')}}" id="fm_dropzone" enctype="multipart/form-data" method="POST">
+							<form action="{{ url(config('Crm.adminRoute') . '/upload_files')}}" id="fm_dropzone" enctype="multipart/form-data" method="POST">
 								{{ csrf_field() }}
 								<div class="dz-message"><i class="fa fa-cloud-upload"></i><br>Drop files here to upload</div>
 								
-								@if(!config('laraadmin.uploads.private_uploads'))
+								@if(!config('Crm.uploads.private_uploads'))
 									<label class="fm_folder_title">Is Public ?</label>
-									{{ Form::checkbox("public", "public", config("laraadmin.uploads.default_public"), []) }}
+									{{ Form::checkbox("public", "public", config("Crm.uploads.default_public"), []) }}
 									<div class="Switch Ajax Round On"><div class="Toggle"></div></div>
 								@endif
 							</form>

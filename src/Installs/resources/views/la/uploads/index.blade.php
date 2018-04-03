@@ -24,7 +24,7 @@
     </div>
 @endif
 
-<form action="{{ url(config('laraadmin.adminRoute') . '/upload_files') }}" id="fm_dropzone_main" enctype="multipart/form-data" method="POST">
+<form action="{{ url(config('Crm.adminRoute') . '/upload_files') }}" id="fm_dropzone_main" enctype="multipart/form-data" method="POST">
     {{ csrf_field() }}
     <a id="closeDZ1"><i class="fa fa-times"></i></a>
     <div class="dz-message"><i class="fa fa-cloud-upload"></i><br>Drop files here to upload</div>
@@ -62,7 +62,7 @@
                                 <input type="hidden" name="file_id" value="0">
                                 <div class="form-group">
                                     <label for="filename">File Name</label>
-                                    <input class="form-control" placeholder="File Name" name="filename" type="text" @if(!config('laraadmin.uploads.allow_filename_change') || !Module::hasFieldAccess("Uploads", "name", "write")) readonly @endif value="">
+                                    <input class="form-control" placeholder="File Name" name="filename" type="text" @if(!config('Crm.uploads.allow_filename_change') || !Module::hasFieldAccess("Uploads", "name", "write")) readonly @endif value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
@@ -72,7 +72,7 @@
                                     <label for="caption">Label</label>
                                     <input class="form-control" placeholder="Caption" name="caption" type="text" value="" @if(!Module::hasFieldAccess("Uploads", "caption", "write")) readonly @endif>
                                 </div>
-                                @if(!config('laraadmin.uploads.private_uploads'))
+                                @if(!config('Crm.uploads.private_uploads'))
                                     <div class="form-group">
                                         <label for="public">Is Public ?</label>
                                         {{ Form::checkbox("public", "public", false, []) }}
@@ -142,7 +142,7 @@ $(function () {
         $("#EditFileModal #downFileBtn").attr("href", bsurl+'/files/'+upload.hash+'/'+upload.name+"?download");
         
 
-        @if(!config('laraadmin.uploads.private_uploads'))
+        @if(!config('Crm.uploads.private_uploads'))
         if(upload.public == "1") {
             $(".file-info-form input[name=public]").attr("checked", !0);
             $(".file-info-form input[name=public]").next().removeClass("On").addClass("Off");
@@ -171,10 +171,10 @@ $(function () {
         }
         $("#EditFileModal").modal('show');
     });
-    @if(!config('laraadmin.uploads.private_uploads') && Module::hasFieldAccess("Uploads", "public", "write"))
+    @if(!config('Crm.uploads.private_uploads') && Module::hasFieldAccess("Uploads", "public", "write"))
     $('#EditFileModal .Switch.Ajax').click(function() {
         $.ajax({
-            url: "{{ url(config('laraadmin.adminRoute') . '/uploads_update_public') }}",
+            url: "{{ url(config('Crm.adminRoute') . '/uploads_update_public') }}",
             method: 'POST',
             data: $("form.file-info-form").serialize(),
             success: function( data ) {
@@ -190,7 +190,7 @@ $(function () {
     $(".file-info-form input[name=caption]").on("blur", function() {
         // TODO: Update Caption
         $.ajax({
-            url: "{{ url(config('laraadmin.adminRoute') . '/uploads_update_caption') }}",
+            url: "{{ url(config('Crm.adminRoute') . '/uploads_update_caption') }}",
             method: 'POST',
             data: $("form.file-info-form").serialize(),
             success: function( data ) {
@@ -201,11 +201,11 @@ $(function () {
     });
 	@endla_field_access
 	
-    @if(config('laraadmin.uploads.allow_filename_change') && Module::hasFieldAccess("Uploads", "name", "write"))
+    @if(config('Crm.uploads.allow_filename_change') && Module::hasFieldAccess("Uploads", "name", "write"))
     $(".file-info-form input[name=filename]").on("blur", function() {
         // TODO: Change Filename
         $.ajax({
-            url: "{{ url(config('laraadmin.adminRoute') . '/uploads_update_filename') }}",
+            url: "{{ url(config('Crm.adminRoute') . '/uploads_update_filename') }}",
             method: 'POST',
             data: $("form.file-info-form").serialize(),
             success: function( data ) {
@@ -220,7 +220,7 @@ $(function () {
     $("#EditFileModal #delFileBtn").on("click", function() {
         if(confirm("Delete image "+$(".file-info-form input[name=filename]").val()+" ?")) {
             $.ajax({
-                url: "{{ url(config('laraadmin.adminRoute') . '/uploads_delete_file') }}",
+                url: "{{ url(config('Crm.adminRoute') . '/uploads_delete_file') }}",
                 method: 'POST',
                 data: $("form.file-info-form").serialize(),
                 success: function( data ) {
@@ -239,7 +239,7 @@ function loadUploadedFiles() {
     // load folder files
     $.ajax({
         dataType: 'json',
-        url: "{{ url(config('laraadmin.adminRoute') . '/uploaded_files') }}",
+        url: "{{ url(config('Crm.adminRoute') . '/uploaded_files') }}",
         success: function ( json ) {
             console.log(json);
             cntFiles = json.uploads;

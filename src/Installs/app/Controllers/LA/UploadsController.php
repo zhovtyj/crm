@@ -1,10 +1,10 @@
 <?php
 /**
- * Controller generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Controller generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 namespace App\Http\Controllers\LA;
@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Response as FacadeResponse;
 use Illuminate\Support\Facades\Input;
 use Collective\Html\FormFacade as Form;
 
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Helpers\LAHelper;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Helpers\LAHelper;
 use Zizaco\Entrust\EntrustFacade as Entrust;
 
 use Auth;
@@ -53,7 +53,7 @@ class UploadsController extends Controller
 				'module' => $module
 			]);
 		} else {
-            return redirect(config('laraadmin.adminRoute')."/");
+            return redirect(config('Crm.adminRoute')."/");
         }
 	}
 	
@@ -165,7 +165,7 @@ class UploadsController extends Controller
 				if( $upload_success ) {
 	
 					// Get public preferences
-					// config("laraadmin.uploads.default_public")
+					// config("Crm.uploads.default_public")
 					$public = Input::get('public');
 					if(isset($public)) {
 						$public = true;
@@ -226,7 +226,7 @@ class UploadsController extends Controller
 			if(Entrust::hasRole('SUPER_ADMIN')) {
 				$uploads = Upload::all();
 			} else {
-				if(config('laraadmin.uploads.private_uploads')) {
+				if(config('Crm.uploads.private_uploads')) {
 					// Upload::where('user_id', 0)->first();
 					$uploads = Auth::user()->uploads;
 				} else {

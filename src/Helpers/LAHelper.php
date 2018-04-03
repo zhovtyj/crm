@@ -1,24 +1,24 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Helpers;
+namespace Zhovtyj\Crm\Helpers;
 
 use DB;
 use Log;
 
-use Dwij\Laraadmin\Models\Module;
+use Zhovtyj\Crm\Models\Module;
 
 /**
  * Class LAHelper
- * @package Dwij\Laraadmin\Helpers
+ * @package Zhovtyj\Crm\Helpers
  *
- * This is LaraAdmin Helper class contains methods required for Admin Panel functionality.
+ * This is Crm Helper class contains methods required for Admin Panel functionality.
  */
 class LAHelper
 {
@@ -50,7 +50,7 @@ class LAHelper
     }
     
     /**
-     * Get list of Database tables excluding LaraAdmin Context tables like
+     * Get list of Database tables excluding Crm Context tables like
      * backups, la_configs, la_menus, migrations, modules, module_fields, module_field_types
      * password_resets, permissions, permission_role, role_module, role_module_fields, role_user
      *
@@ -367,7 +367,7 @@ class LAHelper
      */
     public static function print_menu_editor($menu)
     {
-        $editing = \Collective\Html\FormFacade::open(['route' => [config('laraadmin.adminRoute') . '.la_menus.destroy', $menu->id], 'method' => 'delete', 'style' => 'display:inline']);
+        $editing = \Collective\Html\FormFacade::open(['route' => [config('Crm.adminRoute') . '.la_menus.destroy', $menu->id], 'method' => 'delete', 'style' => 'display:inline']);
         $editing .= '<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-times"></i></button>';
         $editing .= \Collective\Html\FormFacade::close();
         if($menu->type != "module") {
@@ -384,7 +384,7 @@ class LAHelper
 			<div class="dd-handle dd3-handle"></div>
 			<div class="dd3-content"><i class="fa ' . $menu->icon . '"></i> ' . $menu->name . ' ' . $editing . '</div>';
         
-        $childrens = \Dwij\Laraadmin\Models\Menu::where("parent", $menu->id)->orderBy('hierarchy', 'asc')->get();
+        $childrens = \Zhovtyj\Crm\Models\Menu::where("parent", $menu->id)->orderBy('hierarchy', 'asc')->get();
         
         if(count($childrens) > 0) {
             $str .= '<ol class="dd-list">';
@@ -408,7 +408,7 @@ class LAHelper
      */
     public static function print_menu($menu, $active = false)
     {
-        $childrens = \Dwij\Laraadmin\Models\Menu::where("parent", $menu->id)->orderBy('hierarchy', 'asc')->get();
+        $childrens = \Zhovtyj\Crm\Models\Menu::where("parent", $menu->id)->orderBy('hierarchy', 'asc')->get();
 
         $treeview = "";
         $subviewSign = "";
@@ -421,7 +421,7 @@ class LAHelper
             $active_str = 'class="active"';
         }
         
-        $str = '<li' . $treeview . ' ' . $active_str . '><a href="' . url(config("laraadmin.adminRoute") . '/' . $menu->url) . '"><i class="fa ' . $menu->icon . '"></i> <span>' . LAHelper::real_module_name($menu->name) . '</span> ' . $subviewSign . '</a>';
+        $str = '<li' . $treeview . ' ' . $active_str . '><a href="' . url(config("Crm.adminRoute") . '/' . $menu->url) . '"><i class="fa ' . $menu->icon . '"></i> <span>' . LAHelper::real_module_name($menu->name) . '</span> ' . $subviewSign . '</a>';
         
         if(count($childrens)) {
             $str .= '<ul class="treeview-menu">';
@@ -449,7 +449,7 @@ class LAHelper
      */
     public static function print_menu_topnav($menu, $active = false)
     {
-        $childrens = \Dwij\Laraadmin\Models\Menu::where("parent", $menu->id)->orderBy('hierarchy', 'asc')->get();
+        $childrens = \Zhovtyj\Crm\Models\Menu::where("parent", $menu->id)->orderBy('hierarchy', 'asc')->get();
         
         $treeview = "";
         $treeview2 = "";
@@ -464,7 +464,7 @@ class LAHelper
             $active_str = 'class="active"';
         }
         
-        $str = '<li ' . $treeview . '' . $active_str . '><a ' . $treeview2 . ' href="' . url(config("laraadmin.adminRoute") . '/' . $menu->url) . '">' . LAHelper::real_module_name($menu->name) . $subviewSign . '</a>';
+        $str = '<li ' . $treeview . '' . $active_str . '><a ' . $treeview2 . ' href="' . url(config("Crm.adminRoute") . '/' . $menu->url) . '">' . LAHelper::real_module_name($menu->name) . $subviewSign . '</a>';
         
         if(count($childrens)) {
             $str .= '<ul class="dropdown-menu" role="menu">';

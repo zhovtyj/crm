@@ -1,13 +1,13 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Controllers;
+namespace Zhovtyj\Crm\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,14 +15,14 @@ use App\Http\Requests;
 use DB;
 use Schema;
 
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFields;
-use Dwij\Laraadmin\Models\ModuleFieldTypes;
-use Dwij\Laraadmin\Helpers\LAHelper;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFields;
+use Zhovtyj\Crm\Models\ModuleFieldTypes;
+use Zhovtyj\Crm\Helpers\LAHelper;
 
 /**
  * Class FieldController
- * @package Dwij\Laraadmin\Controllers
+ * @package Zhovtyj\Crm\Controllers
  *
  * Controller looks after
  */
@@ -45,7 +45,7 @@ class FieldController extends Controller
         $role = \App\Role::where("name", "SUPER_ADMIN")->first();
         Module::setDefaultFieldRoleAccess($field_id, $role->id, "full");
         
-        return redirect()->route(config('laraadmin.adminRoute') . '.modules.show', [$module_id]);
+        return redirect()->route(config('Crm.adminRoute') . '.modules.show', [$module_id]);
     }
     
     /**
@@ -83,7 +83,7 @@ class FieldController extends Controller
         
         ModuleFields::updateField($id, $request);
         
-        return redirect()->route(config('laraadmin.adminRoute') . '.modules.show', [$module_id]);
+        return redirect()->route(config('Crm.adminRoute') . '.modules.show', [$module_id]);
     }
     
     /**
@@ -106,7 +106,7 @@ class FieldController extends Controller
         
         // Delete Context
         $field->delete();
-        return redirect()->route(config('laraadmin.adminRoute') . '.modules.show', [$module->id]);
+        return redirect()->route(config('Crm.adminRoute') . '.modules.show', [$module->id]);
     }
     
     /**

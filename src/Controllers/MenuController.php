@@ -1,13 +1,13 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Controllers;
+namespace Zhovtyj\Crm\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -15,15 +15,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 
-use Dwij\Laraadmin\Models\Menu;
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFields;
-use Dwij\Laraadmin\Models\ModuleFieldTypes;
-use Dwij\Laraadmin\Helpers\LAHelper;
+use Zhovtyj\Crm\Models\Menu;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFields;
+use Zhovtyj\Crm\Models\ModuleFieldTypes;
+use Zhovtyj\Crm\Helpers\LAHelper;
 
 /**
  * Class MenuController
- * @package Dwij\Laraadmin\Controllers
+ * @package Zhovtyj\Crm\Controllers
  *
  * Works after managing Menus and their hierarchy
  */
@@ -91,7 +91,7 @@ class MenuController extends Controller
                 "status" => "success"
             ], 200);
         } else {
-            return redirect(config('laraadmin.adminRoute') . '/la_menus');
+            return redirect(config('Crm.adminRoute') . '/la_menus');
         }
     }
     
@@ -115,7 +115,7 @@ class MenuController extends Controller
         $menu->icon = $icon;
         $menu->save();
         
-        return redirect(config('laraadmin.adminRoute') . '/la_menus');
+        return redirect(config('Crm.adminRoute') . '/la_menus');
     }
     
     /**
@@ -129,7 +129,7 @@ class MenuController extends Controller
         Menu::find($id)->delete();
         
         // Redirecting to index() method for Listing
-        return redirect()->route(config('laraadmin.adminRoute') . '.la_menus.index');
+        return redirect()->route(config('Crm.adminRoute') . '.la_menus.index');
     }
     
     /**

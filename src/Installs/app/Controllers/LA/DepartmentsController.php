@@ -1,10 +1,10 @@
 <?php
 /**
- * Controller generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Controller generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 namespace App\Http\Controllers\LA;
@@ -17,8 +17,8 @@ use DB;
 use Validator;
 use Datatables;
 use Collective\Html\FormFacade as Form;
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFields;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFields;
 
 use App\Models\Department;
 
@@ -42,7 +42,7 @@ class DepartmentsController extends Controller
 				'module' => $module
 			]);
 		} else {
-            return redirect(config('laraadmin.adminRoute')."/");
+            return redirect(config('Crm.adminRoute')."/");
         }
 	}
 
@@ -76,10 +76,10 @@ class DepartmentsController extends Controller
 			
 			$insert_id = Module::insert("Departments", $request);
 			
-			return redirect()->route(config('laraadmin.adminRoute') . '.departments.index');
+			return redirect()->route(config('Crm.adminRoute') . '.departments.index');
 			
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+			return redirect(config('Crm.adminRoute')."/");
 		}
 	}
 
@@ -111,7 +111,7 @@ class DepartmentsController extends Controller
 				]);
 			}
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+			return redirect(config('Crm.adminRoute')."/");
 		}
 	}
 
@@ -141,7 +141,7 @@ class DepartmentsController extends Controller
 				]);
 			}
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+			return redirect(config('Crm.adminRoute')."/");
 		}
 	}
 
@@ -166,10 +166,10 @@ class DepartmentsController extends Controller
 			
 			$insert_id = Module::updateRow("Departments", $request, $id);
 			
-			return redirect()->route(config('laraadmin.adminRoute') . '.departments.index');
+			return redirect()->route(config('Crm.adminRoute') . '.departments.index');
 			
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+			return redirect(config('Crm.adminRoute')."/");
 		}
 	}
 
@@ -185,9 +185,9 @@ class DepartmentsController extends Controller
 			Department::find($id)->delete();
 			
 			// Redirecting to index() method
-			return redirect()->route(config('laraadmin.adminRoute') . '.departments.index');
+			return redirect()->route(config('Crm.adminRoute') . '.departments.index');
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+			return redirect(config('Crm.adminRoute')."/");
 		}
 	}
 	
@@ -214,7 +214,7 @@ class DepartmentsController extends Controller
 					$data->data[$i][$j] = ModuleFields::getFieldValue($fields_popup[$col], $data->data[$i][$j]);
 				}
 				if($col == $module->view_col) {
-					$data->data[$i][$j] = '<a href="'.url(config('laraadmin.adminRoute') . '/departments/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
+					$data->data[$i][$j] = '<a href="'.url(config('Crm.adminRoute') . '/departments/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
 				}
 				// else if($col == "author") {
 				//    $data->data[$i][$j];
@@ -224,11 +224,11 @@ class DepartmentsController extends Controller
 			if($this->show_action) {
 				$output = '';
 				if(Module::hasAccess("Departments", "edit")) {
-					$output .= '<a href="'.url(config('laraadmin.adminRoute') . '/departments/'.$data->data[$i][0].'/edit').'" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-edit"></i></a>';
+					$output .= '<a href="'.url(config('Crm.adminRoute') . '/departments/'.$data->data[$i][0].'/edit').'" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-edit"></i></a>';
 				}
 				
 				if(Module::hasAccess("Departments", "delete")) {
-					$output .= Form::open(['route' => [config('laraadmin.adminRoute') . '.departments.destroy', $data->data[$i][0]], 'method' => 'delete', 'style'=>'display:inline']);
+					$output .= Form::open(['route' => [config('Crm.adminRoute') . '.departments.destroy', $data->data[$i][0]], 'method' => 'delete', 'style'=>'display:inline']);
 					$output .= ' <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-times"></i></button>';
 					$output .= Form::close();
 				}

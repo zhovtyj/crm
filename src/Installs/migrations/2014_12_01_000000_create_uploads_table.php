@@ -1,15 +1,15 @@
 <?php
 /**
- * Migration generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Migration generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Dwij\Laraadmin\Models\Module;
+use Zhovtyj\Crm\Models\Module;
 
 class CreateUploadsTable extends Migration
 {
@@ -111,7 +111,7 @@ class CreateUploadsTable extends Migration
             "listing_col" => true,
             "popup_vals" => ["Employee", "Client"]
         ]
-        # Format Details: Check http://laraadmin.com/docs/migrations_cruds#schema-ui-types
+        # Format Details: Check http://Crm.com/docs/migrations_cruds#schema-ui-types
         colname: Database column name. lowercase, words concatenated by underscore (_)
         label: Label of Column e.g. Name, Cost, Is Public
         field_type: It defines type of Column in more General way.

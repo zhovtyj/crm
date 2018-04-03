@@ -3,7 +3,7 @@
 
 	@if(LAConfigs::getByKey('layout') != 'layout-top-nav')
 	<!-- Logo -->
-	<a href="{{ url(config('laraadmin.adminRoute')) }}" class="logo">
+	<a href="{{ url(config('Crm.adminRoute')) }}" class="logo">
 		<!-- mini logo for sidebar mini 50x50 pixels -->
 		<span class="logo-mini"><b>{{ LAConfigs::getByKey('sitename_short') }}</b></span>
 		<!-- logo for regular state and mobile devices -->
@@ -17,7 +17,7 @@
 	@if(LAConfigs::getByKey('layout') == 'layout-top-nav')
 		<div class="container">
 			<div class="navbar-header">
-				<a href="{{ url(config('laraadmin.adminRoute')) }}" class="navbar-brand"><b>{{ LAConfigs::getByKey('sitename_part1') }}</b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
+				<a href="{{ url(config('Crm.adminRoute')) }}" class="navbar-brand"><b>{{ LAConfigs::getByKey('sitename_part1') }}</b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 					<i class="fa fa-bars"></i>
 				</button>

@@ -1,17 +1,17 @@
 <?php
 /**
- * Controller generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Controller generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 namespace App\Http\Controllers\LA;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Dwij\Laraadmin\Models\LAConfigs;
+use Zhovtyj\Crm\Models\LAConfigs;
 
 class LAConfigController extends Controller
 {
@@ -68,6 +68,6 @@ class LAConfigController extends Controller
 			LAConfigs::where('key', $key)->update(['value' => $value]);
 		}
 		
-		return redirect(config('laraadmin.adminRoute')."/la_configs");
+		return redirect(config('Crm.adminRoute')."/la_configs");
 	}	
 }

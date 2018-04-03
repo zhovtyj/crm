@@ -1,11 +1,11 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title")
-	<a href="{{ url(config('laraadmin.adminRoute') . '/employees') }}">Employee</a> :
+	<a href="{{ url(config('Crm.adminRoute') . '/employees') }}">Employee</a> :
 @endsection
 @section("contentheader_description", $employee->$view_col)
 @section("section", "Employees")
-@section("section_url", url(config('laraadmin.adminRoute') . '/employees'))
+@section("section_url", url(config('Crm.adminRoute') . '/employees'))
 @section("sub_section", "Edit")
 
 @section("htmlheader_title", "Employees Edit : ".$employee->$view_col)
@@ -29,7 +29,7 @@
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				{!! Form::model($employee, ['route' => [config('laraadmin.adminRoute') . '.employees.update', $employee->id ], 'method'=>'PUT', 'id' => 'employee-edit-form']) !!}
+				{!! Form::model($employee, ['route' => [config('Crm.adminRoute') . '.employees.update', $employee->id ], 'method'=>'PUT', 'id' => 'employee-edit-form']) !!}
 					@la_form($module)
 					
 					{{--
@@ -65,7 +65,7 @@
 					</div>
                     <br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('laraadmin.adminRoute') . '/employees') }}" class="btn btn-default pull-right">Cancel</a>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('Crm.adminRoute') . '/employees') }}" class="btn btn-default pull-right">Cancel</a>
 					</div>
 				{!! Form::close() !!}
 			</div>

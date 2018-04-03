@@ -1,11 +1,11 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title")
-    <a href="{{ url(config('laraadmin.adminRoute') . '/__db_table_name__') }}">__singular_cap_var__</a> :
+    <a href="{{ url(config('Crm.adminRoute') . '/__db_table_name__') }}">__singular_cap_var__</a> :
 @endsection
 @section("contentheader_description", $__singular_var__->$view_col)
 @section("section", "__module_name_2__")
-@section("section_url", url(config('laraadmin.adminRoute') . '/__db_table_name__'))
+@section("section_url", url(config('Crm.adminRoute') . '/__db_table_name__'))
 @section("sub_section", "Edit")
 
 @section("htmlheader_title", "__module_name_2__ Edit : ".$__singular_var__->$view_col)
@@ -29,7 +29,7 @@
     <div class="box-body">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                {!! Form::model($__singular_var__, ['route' => [config('laraadmin.adminRoute') . '.__db_table_name__.update', $__singular_var__->id ], 'method'=>'PUT', 'id' => '__singular_var__-edit-form']) !!}
+                {!! Form::model($__singular_var__, ['route' => [config('Crm.adminRoute') . '.__db_table_name__.update', $__singular_var__->id ], 'method'=>'PUT', 'id' => '__singular_var__-edit-form']) !!}
                     @la_form($module)
                     
                     {{--
@@ -37,7 +37,7 @@
                     --}}
                     <br>
                     <div class="form-group">
-                        {!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('laraadmin.adminRoute') . '/__db_table_name__') }}" class="btn btn-default pull-right">Cancel</a>
+                        {!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('Crm.adminRoute') . '/__db_table_name__') }}" class="btn btn-default pull-right">Cancel</a>
                     </div>
                 {!! Form::close() !!}
             </div>

@@ -1,10 +1,10 @@
 <?php
 /**
- * Controller generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Controller generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 namespace App\Http\Controllers\LA;
@@ -17,8 +17,8 @@ use DB;
 use Validator;
 use Datatables;
 use Collective\Html\FormFacade as Form;
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFields;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFields;
 
 use App\User;
 
@@ -42,7 +42,7 @@ class UsersController extends Controller
 				'module' => $module
 			]);
 		} else {
-            return redirect(config('laraadmin.adminRoute')."/");
+            return redirect(config('Crm.adminRoute')."/");
         }
 	}
 
@@ -58,9 +58,9 @@ class UsersController extends Controller
 			$user = User::findOrFail($id);
 			if(isset($user->id)) {
 				if($user['type'] == "Employee") {
-					return redirect(config('laraadmin.adminRoute') . '/employees/'.$user->id);
+					return redirect(config('Crm.adminRoute') . '/employees/'.$user->id);
 				} else if($user['type'] == "Client") {
-					return redirect(config('laraadmin.adminRoute') . '/clients/'.$user->id);
+					return redirect(config('Crm.adminRoute') . '/clients/'.$user->id);
 				}
 			} else {
 				return view('errors.404', [
@@ -69,7 +69,7 @@ class UsersController extends Controller
 				]);
 			}
 		} else {
-			return redirect(config('laraadmin.adminRoute')."/");
+			return redirect(config('Crm.adminRoute')."/");
 		}
 	}
 
@@ -96,7 +96,7 @@ class UsersController extends Controller
 					$data->data[$i][$j] = ModuleFields::getFieldValue($fields_popup[$col], $data->data[$i][$j]);
 				}
 				if($col == $module->view_col) {
-					$data->data[$i][$j] = '<a href="'.url(config('laraadmin.adminRoute') . '/users/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
+					$data->data[$i][$j] = '<a href="'.url(config('Crm.adminRoute') . '/users/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
 				}
 				// else if($col == "author") {
 				//    $data->data[$i][$j];

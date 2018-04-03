@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ LAConfigs::getByKey('site_description') }}">
-    <meta name="author" content="Dwij IT Solutions">
+    <meta name="author" content="Zhovtyj IT Solutions">
 
     <meta property="og:title" content="{{ LAConfigs::getByKey('sitename') }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ LAConfigs::getByKey('site_description') }}" />
     
-    <meta property="og:url" content="http://laraadmin.com/" />
-    <meta property="og:sitename" content="laraAdmin" />
-	<meta property="og:image" content="http://demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
+    <meta property="og:url" content="http://Crm.com/" />
+    <meta property="og:sitename" content="Crm" />
+	<meta property="og:image" content="http://demo.adminlte.acacha.org/img/Crm-600x600.jpg" />
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@laraadmin" />
-    <meta name="twitter:creator" content="@laraadmin" />
+    <meta name="twitter:site" content="@Crm" />
+    <meta name="twitter:creator" content="@Crm" />
     
     <title>{{ LAConfigs::getByKey('sitename') }}</title>
     
@@ -61,7 +61,7 @@
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <!--<li><a href="{{ url('/register') }}">Register</a></li>-->
                 @else
-                    <li><a href="{{ url(config('laraadmin.adminRoute')) }}">{{ Auth::user()->name }}</a></li>
+                    <li><a href="{{ url(config('Crm.adminRoute')) }}">{{ Auth::user()->name }}</a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->
@@ -135,16 +135,16 @@
             </div>
 
             <div class="col-lg-7">
-				<h3 class="feature-title">What is LaraAdmin ?</h3><br>
+				<h3 class="feature-title">What is Crm ?</h3><br>
 				<ol class="features">
 					<li><strong>CMS</strong> (Content Management System) &#8211; Manages Modules &amp; their Data</li>
 					<li>Backend <strong>Admin Panel</strong> &#8211; Data can be used in front end applications with ease.</li>
 					<li>A probable <strong>CRM</strong> System &#8211; Can be evolved into a CRM system like <a target="_blank" href="https://www.sugarcrm.com">SugarCRM</a></li>
 				</ol><br>
 
-				<h3 class="feature-title">Why LaraAdmin ?</h3><br>
+				<h3 class="feature-title">Why Crm ?</h3><br>
                 <ol class="features">
-					<li><strong>Philosophy:</strong> Inspired by SugarCRM &amp; based on Advanced <strong>Data Types</strong> like Image, HTML, File, Dropdown, TagInput which makes developers job easy. See more in <a target="_blank" href="http://laraadmin.com/features">features</a></li>
+					<li><strong>Philosophy:</strong> Inspired by SugarCRM &amp; based on Advanced <strong>Data Types</strong> like Image, HTML, File, Dropdown, TagInput which makes developers job easy. See more in <a target="_blank" href="http://Crm.com/features">features</a></li>
 					<li>Superior <strong>CRUD generation</strong> for Modules which generates Migration, Controller, Model and Views with single artisan command and integrates with Routes as as well.</li>
 					<li><strong>Form Maker</strong> helper is provided for generating entire form with single function call with module name as single parameter. It also gives you freedom to customise form for every field by providing method to generate single field with parameters for customisations.</li>
 					<li><b>Upload Manager </b>manages project files &amp; images which are integrated with your Module fields.</li>
@@ -162,15 +162,15 @@
         <div class="col-lg-5">
             <h3>Contact Us</h3><br>
             <p>
-				Dwij IT Solutions,<br/>
+				Zhovtyj IT Solutions,<br/>
 				Web Development Company in Pune,<br/>
                 B4, Patang Plaza Phase 5,<br/>
                 Opp. PICT College,<br/>
                 Katraj, Pune, India - 411046
             </p>
-			<div class="contact-link"><i class="fa fa-envelope-o"></i> <a href="mailto:hello@laraadmin.com">hello@laraadmin.com</a></div>
-			<div class="contact-link"><i class="fa fa-cube"></i> <a href="http://laraadmin.com">laraadmin.com</a></div>
-			<div class="contact-link"><i class="fa fa-building"></i> <a href="http://dwijitsolutions.com">dwijitsolutions.com</a></div>
+			<div class="contact-link"><i class="fa fa-envelope-o"></i> <a href="mailto:hello@Crm.com">hello@Crm.com</a></div>
+			<div class="contact-link"><i class="fa fa-cube"></i> <a href="http://Crm.com">Crm.com</a></div>
+			<div class="contact-link"><i class="fa fa-building"></i> <a href="http://Zhovtyjitsolutions.com">Zhovtyjitsolutions.com</a></div>
         </div>
 
         <div class="col-lg-7">
@@ -198,7 +198,7 @@
 <div id="c">
     <div class="container">
         <p>
-            <strong>Copyright &copy; 2016. Powered by <a href="https://dwijitsolutions.com"><b>Dwij IT Solutions</b></a>
+            <strong>Copyright &copy; 2016. Powered by <a href="https://Zhovtyjitsolutions.com"><b>Zhovtyj IT Solutions</b></a>
         </p>
     </div>
 </div>

@@ -1,19 +1,19 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 use Illuminate\Database\Seeder;
 
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\Models\ModuleFields;
-use Dwij\Laraadmin\Models\ModuleFieldTypes;
-use Dwij\Laraadmin\Models\Menu;
-use Dwij\Laraadmin\Models\LAConfigs;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\Models\ModuleFields;
+use Zhovtyj\Crm\Models\ModuleFieldTypes;
+use Zhovtyj\Crm\Models\Menu;
+use Zhovtyj\Crm\Models\LAConfigs;
 
 use App\Role;
 use App\Permission;
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 	public function run()
 	{
 		
-		/* ================ LaraAdmin Seeder Code ================ */
+		/* ================ Crm Seeder Code ================ */
 		
 		// Generating Module Menus
 		$modules = Module::all();
@@ -87,11 +87,11 @@ class DatabaseSeeder extends Seeder
 		
 		$role->attachPermission($perm);
 		
-		// Generate LaraAdmin Default Configurations
+		// Generate Crm Default Configurations
 		
 		$laconfig = new LAConfigs;
 		$laconfig->key = "sitename";
-		$laconfig->value = "LaraAdmin 1.0";
+		$laconfig->value = "Crm 1.0";
 		$laconfig->save();
 
 		$laconfig = new LAConfigs;
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
 
 		$laconfig = new LAConfigs;
 		$laconfig->key = "site_description";
-		$laconfig->value = "LaraAdmin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.";
+		$laconfig->value = "Crm is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.";
 		$laconfig->save();
 
 		// Display Configurations

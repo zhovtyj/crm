@@ -13,11 +13,11 @@
 		
 	</div>
 	<div class="box-body">
-		<p>LaraAdmin Code Editor does not comes inbuilt now. You can get it by following commands.</p>
-		<pre><code>composer require dwij/laeditor</code></pre>
+		<p>Crm Code Editor does not comes inbuilt now. You can get it by following commands.</p>
+		<pre><code>composer require Zhovtyj/laeditor</code></pre>
 		<p>This will download the editor package. Not install editor by following command:</p>
 		<pre><code>php artisan la:editor</code></pre>
-		<p>Now refresh this page or go to <a href="{{ url(config('laraadmin.adminRoute') . '/laeditor') }}">{{ url(config('laraadmin.adminRoute') . '/laeditor') }}</a>.</p>
+		<p>Now refresh this page or go to <a href="{{ url(config('Crm.adminRoute') . '/laeditor') }}">{{ url(config('Crm.adminRoute') . '/laeditor') }}</a>.</p>
 	</div>
 </div>
 

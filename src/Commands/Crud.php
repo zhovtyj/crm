@@ -1,25 +1,25 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
-namespace Dwij\Laraadmin\Commands;
+namespace Zhovtyj\Crm\Commands;
 
 use Config;
 use Artisan;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Dwij\Laraadmin\Models\Module;
-use Dwij\Laraadmin\CodeGenerator;
+use Zhovtyj\Crm\Models\Module;
+use Zhovtyj\Crm\CodeGenerator;
 
 /**
  * Class Crud
- * @package Dwij\Laraadmin\Commands
+ * @package Zhovtyj\Crm\Commands
  *
  * Command that generates CRUD's for a Module. Takes Module name as input.
  */

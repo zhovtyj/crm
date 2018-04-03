@@ -1,17 +1,17 @@
 <?php
 /**
- * Code generated using LaraAdmin
- * Help: http://laraadmin.com
- * LaraAdmin is open-sourced software licensed under the MIT license.
- * Developed by: Dwij IT Solutions
- * Developer Website: http://dwijitsolutions.com
+ * Code generated using Crm
+ * Help: http://Crm.com
+ * Crm is open-sourced software licensed under the MIT license.
+ * Developed by: Zhovtyj IT Solutions
+ * Developer Website: http://Zhovtyjitsolutions.com
  */
 
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class LaraAdminTest extends TestCase
+class CrmTest extends TestCase
 {
 	use DatabaseMigrations;
 
@@ -44,7 +44,7 @@ class LaraAdminTest extends TestCase
     public function testExample()
     {
 		$this->visit('/')
-             ->see('LaraAdmin')
+             ->see('Crm')
 			 ->see('Taylor Otwell');
     }
 
